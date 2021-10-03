@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Actor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private string _name;
+    public void MoveUp()
     {
-        
+        transform.Translate(Vector2.up);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void MoveLeft()
     {
-        
+        transform.Translate(Vector2.left);
+    }
+    public void MoveDown()
+    {
+        transform.Translate(Vector2.down);
+    }
+    public void MoveRight()
+    {
+        transform.Translate(Vector2.right);
+    }
+    public string Name
+    {
+        get { return _name; }
+        set { _name = value; }
     }
 }

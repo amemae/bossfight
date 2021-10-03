@@ -6,9 +6,13 @@ public class ActorDictionary : MonoBehaviour
 {
     Dictionary<ActorKey, Actor> _dict;
 
-    public void Setup()
+    public void Setup(List<Actor> actors, List<ActorKey> actorkeys)
     {
         _dict = new Dictionary<ActorKey, Actor>();
+        for (int i = 0; i < actors.Count; ++i)
+        {
+            AddActor(actorkeys[i], actors[i]);
+        }
     }
 
     public void AddActor(ActorKey key, Actor actor)

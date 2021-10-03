@@ -10,21 +10,21 @@ public class TurnOrder : MonoBehaviour
         _list = new TurnOrderList();
     }
 
-    void AddActor(Actor actor)
+    public void AddActor(Actor actor)
     {
         _list.Insert(actor);
     }
 
-    void AddActor(Actor actor, int index)
+    public void AddActor(Actor actor, int index)
     {
         _list.Insert(actor, index);
     }
-    void RemoveActor(Actor actor)
+    public void RemoveActor(Actor actor)
     {
         _list.Remove(actor);
     }
 
-    void NextTurn()
+    public void NextTurn()
     {
         _list.AdvanceHead();
     }
