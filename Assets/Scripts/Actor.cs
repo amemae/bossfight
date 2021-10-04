@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Actor : MonoBehaviour
+public class Actor : ActionReceiver
 {
     private string _name;
+
+    private void Start()
+    {
+            
+    }
+
     public void MoveUp()
     {
         transform.Translate(Vector2.up);

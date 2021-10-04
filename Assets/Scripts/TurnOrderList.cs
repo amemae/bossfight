@@ -20,6 +20,8 @@ public class TurnOrderList
         {
             _turnOrder.Add(actor);
             _headIndex = 0;
+
+            _turnOrder[_headIndex].Attach();
         }
         else
         {
@@ -55,6 +57,7 @@ public class TurnOrderList
     public void Remove(Actor actor)
     {
         int actorIndex = _turnOrder.IndexOf(actor);
+        _turnOrder[_headIndex].Detach();
         if (actorIndex < _headIndex)
         {
             --_headIndex;
@@ -64,7 +67,11 @@ public class TurnOrderList
 
     public void AdvanceHead(int steps = 1)
     {
+        _turnOrder[_headIndex].Detach();
+
         _headIndex += steps;
         _headIndex %= _turnOrder.Count;
+
+        _turnOrder[_headIndex].Attach();
     }
 }
