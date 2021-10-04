@@ -24,22 +24,22 @@ public class ActionReceiver : MonoBehaviour
 
     }
 
-    public void MoveUp()
+    virtual public void MoveUp()
     {
 
     }
 
-    public void MoveLeft()
+    virtual public void MoveLeft()
     {
 
     }
 
-    public void MoveDown()
+    virtual public void MoveDown()
     {
 
     }
 
-    public void MoveRight()
+    virtual public void MoveRight()
     {
 
     }

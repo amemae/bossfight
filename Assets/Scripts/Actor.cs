@@ -11,19 +11,19 @@ public class Actor : ActionReceiver
             
     }
 
-    public void MoveUp()
+    public override void MoveUp()
     {
         transform.Translate(Vector2.up);
     }
-    public void MoveLeft()
+    public override void MoveLeft()
     {
         transform.Translate(Vector2.left);
     }
-    public void MoveDown()
+    public  override void MoveDown()
     {
         transform.Translate(Vector2.down);
     }
-    public void MoveRight()
+    public  override void MoveRight()
     {
         transform.Translate(Vector2.right);
     }
