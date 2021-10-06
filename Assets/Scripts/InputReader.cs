@@ -2,9 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputReader : MonoBehaviour
+public class InputReader
 {
-    void ReadInput()
+    private static InputReader _instance;
+
+    public static InputReader Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new InputReader();
+            }
+            return _instance;
+        }
+    }
+
+    public void ReadInput()
     {
         GameManager.Actions action = GameManager.Actions.NONE;
         if (Input.GetKeyDown(_moveUp))
@@ -24,7 +38,7 @@ public class InputReader : MonoBehaviour
             action = GameManager.Actions.MOVE_RIGHT;
         }
 
-        GameManager.Instance.ActionInterpreter.Interpret(action);
+        ActionInterpreter.Instance.Interpret(action);
     }
 
     private string _moveUp = "w";

@@ -2,8 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActionInterpreter : MonoBehaviour
+public class ActionInterpreter
 {
+    private static ActionInterpreter _instance;
+    public static ActionInterpreter Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new ActionInterpreter();
+            }
+            return _instance;
+        }
+    }
+
     public void Interpret (GameManager.Actions action)
     {
         switch(action)

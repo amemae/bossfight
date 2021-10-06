@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ActionReceiver : MonoBehaviour
 {
-    private void Start()
+    private void Awake()
     {
         GameManager.Instance.AttachActionReceiver(this);
     }

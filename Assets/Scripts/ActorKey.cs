@@ -6,6 +6,7 @@ public class ActorKey
 {
     private string _key;
     private string _secondaryKey;
+
     public ActorKey(string key, string secondaryKey = "")
     {
         _key = key;

@@ -7,7 +7,7 @@ public class TurnOrderList
     List<Actor> _turnOrder;
     private int _headIndex;
 
-    private void Awake()
+    public TurnOrderList()
     {
         _turnOrder = new List<Actor>();
         _headIndex = -1;

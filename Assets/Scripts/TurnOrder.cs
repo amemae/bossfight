@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurnOrder : MonoBehaviour
+public class TurnOrder
 {
     private TurnOrderList _list;
-    void Awake()
+
+    public TurnOrder()
     {
         _list = new TurnOrderList();
     }

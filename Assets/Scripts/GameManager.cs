@@ -17,15 +17,17 @@ public class GameManager : MonoBehaviour
     private ActorDictionary _actorDict;
     private TurnOrder _turnOrder;
     private List<ActionReceiver> _actionRecs;
-    private ActionInterpreter _actionInter;
-    
+
+    public Actor _testActor;
+
     public static GameManager Instance
     {
         get
         {
             if (_instance == null)
             {
-                _instance = new GameManager();
+                GameObject go = new GameObject("GameManager");
+                go.AddComponent<GameManager>();
             }
             return _instance;
         }
@@ -36,22 +38,23 @@ public class GameManager : MonoBehaviour
         get { return _actionRecs; }
     }
 
-    public ActionInterpreter ActionInterpreter
+    private void Awake()
     {
-        get { return _actionInter; }
+        _instance = this;
     }
 
-    void Awake()
+    void Start()
     {
-        _actorDict = new ActorDictionary();
         _turnOrder = new TurnOrder();
+        _actorDict = new ActorDictionary();
+        _actionRecs = new List<ActionReceiver>();
 
         SetupGame();
     }
 
     private void Update()
     {
-        
+        InputReader.Instance.ReadInput();
     }
 
     private void SetupGame()
@@ -65,7 +68,7 @@ public class GameManager : MonoBehaviour
         List<Actor> actorList = new List<Actor>();
         List<ActorKey> actorKeyList = new List<ActorKey>();
 
-        Actor actor = new Actor();
+        Actor actor = _testActor;
         actor.Name = "Ghosty";
         actorList.Add(actor);
 
