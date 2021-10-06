@@ -7,9 +7,7 @@ public class Actor : ActionReceiver
     private string _name;
 
     private void Awake()
-    {
-        Debug.Log("Actor made");
-    }
+    {}
 
     public override void MoveUp()
     {

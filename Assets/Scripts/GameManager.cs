@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
     private ActorDictionary _actorDict;
     private TurnOrder _turnOrder;
-    private List<ActionReceiver> _actionRecs;
+    private ActionReceiverList _actionRecs;
 
     public Actor _testActor;
 
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public List<ActionReceiver> ActionReceivers
+    public ActionReceiverList ActionReceivers
     {
         get { return _actionRecs; }
     }
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         _turnOrder = new TurnOrder();
         _actorDict = new ActorDictionary();
-        _actionRecs = new List<ActionReceiver>();
+        _actionRecs = new ActionReceiverList();
 
         SetupGame();
     }
